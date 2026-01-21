@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom' // Import Link for navigation
+import { Link, useNavigate } from 'react-router-dom' // Add useNavigate
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const navigate = useNavigate() // Initialize navigate
 
   return (
     <div className="white-container">
@@ -16,7 +17,7 @@ function App() {
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#careers">Careers</a></li>
-            <li><Link to="/login">Login</Link></li>
+  
           </ul>
         </nav>
       </header>
@@ -53,20 +54,29 @@ function App() {
           <h2>Careers</h2>
           <p>Join our team and help shape the future of technology. Here are some of our current openings:</p>
           <ul className="job-list">
-            <li>
-              <h3>Software Engineer</h3>
-              <p>Location: Remote | Full-Time</p>
-              <p>Responsibilities: Develop and maintain scalable software solutions.</p>
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div>
+                <h3>Software Engineer</h3>
+                <p>Location: Remote | Full-Time</p>
+                <p>Responsibilities: Develop and maintain scalable software solutions.</p>
+              </div>
+              <button onClick={() => navigate('/Login')}>Apply</button>
             </li>
-            <li>
-              <h3>Cloud Architect</h3>
-              <p>Location: New York, USA | Full-Time</p>
-              <p>Responsibilities: Design and implement cloud infrastructure for clients.</p>
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div>
+                <h3>Cloud Architect</h3>
+                <p>Location: New York, USA | Full-Time</p>
+                <p>Responsibilities: Design and implement cloud infrastructure for clients.</p>
+              </div>
+              <button onClick={() => navigate('/Login')}>Apply</button>
             </li>
-            <li>
-              <h3>Data Scientist</h3>
-              <p>Location: London, UK | Full-Time</p>
-              <p>Responsibilities: Analyze data and build predictive models.</p>
+            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <div>
+                <h3>Data Scientist</h3>
+                <p>Location: London, UK | Full-Time</p>
+                <p>Responsibilities: Analyze data and build predictive models.</p>
+              </div>
+              <button onClick={() => navigate('/Login')}>Apply</button>
             </li>
           </ul>
         </section>
