@@ -1,0 +1,319 @@
+body {
+  background: url('/WebBackground.png') no-repeat center center fixed; /* Set background image */
+  background-size: cover; /* Ensure the image covers the entire page */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Ensure consistent font styling */
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.header-container {
+  text-align: center;
+  padding: 2rem;
+  background: none; /* Remove background */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section, .services-section, .contact-section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  text-align: center;
+
+  color: black; /* Ensure text color is readable */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-background {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.icon-card {
+  text-align: center;
+  max-width: 200px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 0.5rem;
+}
+
+.icon-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: black; /* Set icon card title color to black */
+}
+
+.icon-card p {
+  font-size: 0.9rem;
+  color: black; /* Set icon card text color to black */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Ensure 4 cards in one row */
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #007BFF, #0056b3); /* Professional blue gradient */
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #6a11cb;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #333;
+  color: white;
+  border-radius: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: none; /* Remove blue background */
+  color: black;
+  box-shadow: none; /* Remove shadow */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Push the logo to the far left */
+}
+
+.logo {
+  height: 50px; /* Adjust the height of the logo */
+  width: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black; /* Change link color to white */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00; /* Optional hover effect for better visibility */
+}
+
+.careers-section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.job-list li {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.job-list h3 {
+  margin: 0 0 0.5rem;
+  color: #0056b3;
+}
+
+.job-list p {
+  margin: 0.25rem 0;
+  color: #333;
+}
+
+.Picture {
+  width: 100%; /* Ensure it scales responsively */
+  max-width: 1500px; /* Limit the maximum width */
+  height: 450px; /* Set a fixed height */
+  margin: 1rem auto; /* Center the image with some spacing */
+  display: block; /* Ensure the image is centered */
+}
+
+.white-container {
+  background: white; /* White background for the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+  max-width: 900px; /* Limit the width of the container */
+  margin: 2rem auto; /* Center the container horizontally and add vertical spacing */
+  padding: 2rem; /* Add padding inside the container */
+  text-align: center; /* Center-align the content */
+  z-index: 1; /* Ensure it appears above the background */
+  position: relative; /* Position relative for stacking context */
+}
+
+.login-container {
+  background: white; /* White background for the login card */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for elevation */
+  max-width: 400px; /* Limit the width of the login card */
+  margin: 5rem auto; /* Center the login card */
+  padding: 2rem; /* Add padding inside the card */
+  text-align: center; /* Center-align the content */
+}
+
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #0056b3; /* Match the professional blue gradient */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333; /* Dark text for labels */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007BFF; /* Highlight input on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.login-button {
+  background: linear-gradient(135deg, #007BFF, #0056b3); /* Professional blue gradient */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #0056b3; /* Darker blue on hover */
+}
