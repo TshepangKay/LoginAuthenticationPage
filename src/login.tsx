@@ -1,69 +1,115 @@
-import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+import { Eye, EyeOff } from "lucide-react";
 
-const containerStyle: React.CSSProperties = {
-  maxWidth: '350px',
-  margin: '60px auto',
-  padding: '32px',
-  background: '#fff',
-  borderRadius: '12px',
-  boxShadow: '0 2px 16px rgba(0,0,0,0.10)',
-  fontFamily: 'inherit'
-};
 
-const inputStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '10px',
-  marginTop: '6px',
-  marginBottom: '18px',
-  border: '1px solid #ccc',
-  borderRadius: '6px',
-  fontSize: '1rem'
-};
+const LoginPage: React.FC = () => {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
-const buttonStyle: React.CSSProperties = {
-  width: '100%',
-  padding: '12px',
-  background: '#0078d4',
-  color: '#fff',
-  border: 'none',
-  borderRadius: '6px',
-  fontWeight: 600,
-  fontSize: '1rem',
-  cursor: 'pointer',
-  marginTop: '10px'
-};
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Logging in with:", { email, password });
+  };
 
-const linkStyle: React.CSSProperties = {
-  color: '#0078d4',
-  textDecoration: 'none',
-  fontSize: '0.97rem',
-  margin: '0 6px'
-};
-
-function Login() {
   return (
-    <div className="white-container">
-      <div style={containerStyle}>
-        <h2 style={{ textAlign: 'center', marginBottom: '24px', color: '#0078d4' }}>Login</h2>
-        <form>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input style={inputStyle} type="email" id="email" name="email" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input style={inputStyle} type="password" id="password" name="password" required />
-          </div>
-          <button type="submit" style={buttonStyle}>Login</button>
+   
+      <div style={styles.card}>
+        <h2 style={styles.title}>LOGIN</h2>
+        
+        <form onSubmit={handleLogin} style={styles.form}>
+          <input 
+            type="email" 
+            placeholder="Email address" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={styles.input} 
+            maxLength={254}
+            required 
+          />
+          <input 
+            type="password" 
+            placeholder="Password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.input} 
+            minLength={8}
+            maxLength={64}
+            autoComplete="current-password"
+            required 
+          />
+          
+          <button type="submit" style={styles.button}>
+            Log In
+          </button>
         </form>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '18px' }}>
-          <a href="#" style={linkStyle}>Forgot Password?</a>
-          <a href="#" style={linkStyle}>Sign Up</a>
+
+        <div style={styles.footer}>
+          <a href="#forgot" style={styles.link}>Forgot password?</a>
+          <span style={{ color: '#070404' }}> | </span>
+          <a href="#signup" style={styles.link}>Create account</a>
         </div>
       </div>
-    </div>
+   
   );
-}
+};
 
-export default Login;
+const styles: { [key: string]: React.CSSProperties } = {
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#f0f2f5',
+    fontFamily: 'Arial, sans-serif',
+  },
+  card: {
+    backgroundColor: '#ffffff',
+    padding: '40px',
+    borderRadius: '20px', // Extra curvy corners
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+    width: '100%',
+    maxWidth: '400px',
+    textAlign: 'center',
+  },
+  title: {
+    marginBottom: '24px',
+    color: '#333',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+  },
+  input: {
+    padding: '12px 16px',
+    borderRadius: '12px', // Curvy input boxes
+    border: '1px solid #ddd',
+    fontSize: '16px',
+    outline: 'none',
+    backgroundColor: '#fff',
+    color: 'black',
+  },
+  button: {
+    padding: '12px',
+    borderRadius: '12px',
+    border: 'none',
+    backgroundColor: '#007bff', // The blue button
+    color: 'white',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    marginTop: '10px',
+    transition: 'background-color 0.3s',
+  },
+  footer: {
+    marginTop: '20px',
+    fontSize: '14px',
+  },
+  link: {
+    color: '#007bff',
+    textDecoration: 'none',
+    margin: '0 5px',
+  }
+};
+
+export default LoginPage;
