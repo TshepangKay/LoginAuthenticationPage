@@ -16,7 +16,7 @@ function App() {
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#careers">Careers</a></li>
+            <li><Link to="/careers">Careers</Link></li>
   
           </ul>
         </nav>
@@ -50,36 +50,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="careers-section" id="careers">
-          <h2>Careers</h2>
-          <p>Join our team and help shape the future of technology. Here are some of our current openings:</p>
-          <ul className="job-list">
-            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <h3>Software Engineer</h3>
-                <p>Location: Remote | Full-Time</p>
-                <p>Responsibilities: Develop and maintain scalable software solutions.</p>
-              </div>
-              <button onClick={() => navigate('/Login')}>Apply</button>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <h3>Cloud Architect</h3>
-                <p>Location: New York, USA | Full-Time</p>
-                <p>Responsibilities: Design and implement cloud infrastructure for clients.</p>
-              </div>
-              <button onClick={() => navigate('/Login')}>Apply</button>
-            </li>
-            <li style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <h3>Data Scientist</h3>
-                <p>Location: London, UK | Full-Time</p>
-                <p>Responsibilities: Analyze data and build predictive models.</p>
-              </div>
-              <button onClick={() => navigate('/Login')}>Apply</button>
-            </li>
-          </ul>
-        </section>
+       
         <section className="contact-section">
           <h2>Contact Us</h2>
           <p>

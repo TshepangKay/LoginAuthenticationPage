@@ -4,14 +4,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom' // Import Browse
 
 import './index.css'
 import App from './App.tsx'
-import Login from './Login'
+import Login from './login'
 import Form from './Form'
+import Careers from './careers.tsx'
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+         <Route path="/careers" element={<Careers />} />
         <Route path="/login" element={<Login />} />
         <Route path="/form" element={<Form />} />
       </Routes>
